@@ -1,0 +1,2 @@
+module MiniMarketHelper
+end
