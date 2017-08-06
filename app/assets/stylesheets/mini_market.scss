@@ -1,3 +1,80 @@
 // Place all the styles related to the MiniMarket controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'PT Sans', sans-serif;
+font-family: 'Amatic SC', cursive;
+*/
+
+//Header//
+header{
+    .navbar-brand{
+        font-family:'Roboto', sans-serif;
+        font-size: 27px;
+    }
+    ul li{
+        font-family:'Open Sans', sans-serif;
+        font-size: 20px;
+    }
+}
+//body of the page//
+#presentation{
+    margin-top: 40px;
+    text-align: justify;
+    h1{
+        font-family: 'PT Sans';
+        font-size: 51px;
+        font-weight: bolder;
+        text-align: center;
+    }
+    p{
+        font-family: 'Roboto';
+        font-size: 30px;
+        font-weight: bolder;
+        text-align: justify;
+        color: gray;
+    }
+    
+    #images{
+        font-family: 'Amatic SC';
+        text-align: center;
+        h3{
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .imgLikns{
+            img{
+                max-width: 270px;
+                min-width: 150px;
+            }
+        }
+    }
+    
+    #divider{
+        margin: 40px 0px;
+    }
+}
+
+//Footer //
+
+footer{
+    background: black;
+    h4{
+        color:white;
+    }
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    p{
+        color: white;
+        font-size: 16px;
+        justify-content: center;
+        text-align: justify;
+        margin-top: 15px;
+    }
+}
