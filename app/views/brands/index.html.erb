@@ -1,26 +1,38 @@
-<div class="container">
-    <div id="presentation" class="row">
-        <div class="col-md-offset-4 col-md-4">
-            <h1>Brands</h1>
-        </div>
-        <div class="col-md-offset-4 col-md-4">
-            <h3>Registered brands</h3>
+<div class="col-md-offset-4 col-md-4">
+    <h1>Brands</h1>
+</div>
+<div class="col-md-offset-2 col-md-8">
+    <p>
+        Here you can see a complete list of all your currents Brands.
+    </p>
+    <p>
+        You can create, edit and delete a brand whenever you want.
+    </p>
+    <div class="col-md-7">
+        <h2>Registered brands</h2>
+        <hr>
+        <div id="brands-list" class="well">
             <ul>
                 <% @brands.each do |brand| %>
                     <li>
-                        <h3><%= brand.name %></h3>
-                        <%= link_to "Edit", edit_brand_path(brand), class: 'btn btn-default' %>
+                        <p><%= brand.name %></p>
+                        <span>
+                            <%= link_to "Edit", edit_brand_path(brand), class: 'btn btn-default' %>
                         <%= link_to "Delete", brand_path(brand),
                                             method: :delete,
                                             data: {confirm: "Are you sure that want to delete #{brand.name} brand?"}, 
                                             class: 'btn btn-danger' %>
+                        </span> 
                     </li>
+                    <hr>
                 <% end %>
-            </ul> 
-        </div>
-        <div>
-            <%= link_to "Create a new brand",new_brand_path,class: 'btn btn-default' %>
-        </div>
+            </ul>
+        </div> 
+    </div> 
+    <div class="col-md-5" id="buttons-brand-list">
+        <hr>
+        <%= link_to "Create a new brand",new_brand_path,class: 'btn btn-primary boton' %>
+        <hr>
+         <%= link_to "See all the products",new_brand_path,class: 'btn btn-primary boton' %>
     </div>
-    <hr class="divider">
 </div>

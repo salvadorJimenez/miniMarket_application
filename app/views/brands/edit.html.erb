@@ -1,24 +1,19 @@
-<div class="container">
-    <div id="presentation" class="row">
-        <div class="col-md-offset-4 col-md-4">
-            <h1>Brands</h1>
-        </div>
-        <div class="col-md-offset-4 col-md-4">
-            <%= form_for :brand,url: brand_path(@brand), method: :patch do |f|%>
-                <% if @brand.errors.any? %>
-                    <% @brand.errors.full_messages.each do |msg|%>
-                        <div class="alert alert-danger"><%= msg %></div>
-                    <%end%>
-                <%end%>
-                <p>
-                    <%=f.label :name %><br>
-                    <%= f.text_field :name , class: 'form-control'%>
-                </p>
-                <p>
-                    <%= f.submit({class: 'btn btn-primary'}) %>
-                </p>
-            <% end %>     
-        </div>
-    </div>
-    <hr class="divider">
+<div class="col-md-offset-4 col-md-4">
+    <h1>Brands</h1>
+</div>
+<div class="col-md-offset-4 col-md-4">
+    <%= form_for :brand,url: brand_path(@brand), method: :patch do |f|%>
+        <% if @brand.errors.any? %>
+            <% @brand.errors.full_messages.each do |msg|%>
+                <div class="alert alert-danger"><%= msg %></div>
+            <%end%>
+        <%end%>
+        <p>
+            <%=f.label :name %><br>
+            <%= f.text_field :name , class: 'form-control'%>
+        </p>
+        <p>
+            <%= f.submit({class: 'btn btn-primary'}) %>
+        </p>
+    <% end %>     
 </div>
