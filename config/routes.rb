@@ -8,5 +8,9 @@ Rails.application.routes.draw do
 
   root "mini_market#home"
 
-  resources :brands
+  resources :brands do
+    resources :products
+  end
+
+  resources :products
 end
