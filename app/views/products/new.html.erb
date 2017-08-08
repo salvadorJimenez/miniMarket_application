@@ -1,0 +1,31 @@
+<div class="col-md-offset-4 col-md-4">
+    <h1>Products</h1>
+</div>
+<div class="col-md-offset-4 col-md-4">
+    <%= form_for :product,url: products_path,method: :post do |f|%>
+        <% if @product.errors.any? %>
+            <% @product.errors.full_messages.each do |msg|%>
+                <div class="alert alert-danger"><%= msg %></div>
+            <%end%>
+        <%end%>
+        <p>
+            <%=f.label :name %><br>
+            <%= f.text_field :name , class: 'form-control'%>
+        </p>
+        <p>
+            <%=f.label :brand %><br>
+            <%= f.select :brand_id,@brands.map{|brand| [brand.name,brand.id]} , class: 'form-control'%>
+        </p>
+        <p>
+            <%=f.label :description %><br>
+            <%= f.text_area :description , class: 'form-control'%>
+        </p>
+        <p>
+            <%=f.label :price %><br>
+            <%= f.number_field :price , class: 'form-control'%>
+        </p>
+        <p>
+            <%= f.submit({class: 'btn btn-primary'}) %>
+        </p>
+    <% end %>     
+</div>

@@ -18,7 +18,7 @@
                         <p><%= brand.name %></p>
                         <span>
                             <%= link_to "Edit", edit_brand_path(brand), class: 'btn btn-default' %>
-                        <%= link_to "Delete", brand_path(brand),
+                            <%= link_to "Delete", brand_path(brand),
                                             method: :delete,
                                             data: {confirm: "Are you sure that want to delete #{brand.name} brand?"}, 
                                             class: 'btn btn-danger' %>
@@ -33,6 +33,9 @@
         <hr>
         <%= link_to "Create a new brand",new_brand_path,class: 'btn btn-primary boton' %>
         <hr>
-         <%= link_to "See all the products",new_brand_path,class: 'btn btn-primary boton' %>
+        <%= link_to "See all the products",products_path,class: 'btn btn-primary boton' %>
+        <hr>
+        <%= link_to "Create a new product",new_product_path,class: 'btn btn-primary boton' %>
+        <hr>
     </div>
 </div>

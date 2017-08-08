@@ -1,0 +1,22 @@
+<div class="col-md-offset-4 col-md-4">
+    <h1>Products</h1>
+</div>
+<div class="col-md-offset-2 col-md-8">
+    <ul>
+    <% @products.each do |product| %>
+        <li>
+            <div class="product-name"><%= product.name %></div>
+            <div class="product-brand-name"><%= Brand.find(product.brand_id).name %></div>
+            <div class="product-description"><%= product.description %></div>
+            <div class="product-price"><%= product.price.to_f %></div>
+            <div>
+                <%= link_to "Edit", edit_product_path(product.id), class: 'btn btn-default' %>
+                <%= link_to "Delete", product_path(product.id),
+                                            method: :delete,
+                                            data: {confirm: "Are you sure that want to delete this product?"}, 
+                                            class: 'btn btn-danger' %>
+            </div>
+        </li>
+    <%end%>
+    </ul>
+</div>
