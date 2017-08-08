@@ -2,21 +2,43 @@
     <h1>Products</h1>
 </div>
 <div class="col-md-offset-2 col-md-8">
-    <ul>
-    <% @products.each do |product| %>
-        <li>
-            <div class="product-name"><%= product.name %></div>
-            <div class="product-brand-name"><%= Brand.find(product.brand_id).name %></div>
-            <div class="product-description"><%= product.description %></div>
-            <div class="product-price"><%= product.price.to_f %></div>
-            <div>
-                <%= link_to "Edit", edit_product_path(product.id), class: 'btn btn-default' %>
-                <%= link_to "Delete", product_path(product.id),
-                                            method: :delete,
-                                            data: {confirm: "Are you sure that want to delete this product?"}, 
-                                            class: 'btn btn-danger' %>
-            </div>
-        </li>
-    <%end%>
-    </ul>
+    <p>
+        Here you can see a complete list of all your Products.
+    </p>
+    <p>
+        You can create, edit and delete a product whenever you want.
+    </p>
+    <div class="col-md-8">
+        <h3>Registered Products</h3>
+        <hr class="product-separator">
+        <div id="products-list">
+            <ul>
+                <% @products.each do |product| %>
+                    <li class="well col-md-12">
+                        <div class="col-md-9">
+                            <div class="product-name"><strong>Name: </strong><%= product.name %></div>
+                            <div class="product-brand-name"><strong>Brand: </strong><%= Brand.find(product.brand_id).name %></div>
+                            <div class="product-price"><strong>Price: </strong><%= product.price.to_f %></div>
+                            <div class="product-description"><strong>Description: </strong><%= product.description %></div>
+                            
+                        </div>  
+                        <div class="col-md-3 product-buttons">
+                            <%= link_to "", edit_product_path(product.id), class: 'btn btn-default glyphicon glyphicon-pencil' %>
+                            <%= link_to "", product_path(product.id),
+                                                        method: :delete,
+                                                        data: {confirm: "Are you sure that want to delete this product?"}, 
+                                                        class: 'btn btn-danger glyphicon glyphicon-remove' %>
+                        </div>
+                    </li>
+                <%end%>
+            </ul>
+        </div> 
+    </div> 
+    <div class="col-md-4" id="menu-product-buttons">
+        <hr>
+        <%= link_to "Create a new Product",new_product_path,class: 'btn btn-default boton' %>
+        <hr>
+        <%= link_to "Go to Brands",brands_path,class: 'btn btn-default boton' %>
+        <hr>
+    </div>
 </div>

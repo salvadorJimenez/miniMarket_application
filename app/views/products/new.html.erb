@@ -1,6 +1,11 @@
 <div class="col-md-offset-4 col-md-4">
     <h1>Products</h1>
 </div>
+<div class="col-md-offset-2 col-md-8">
+    <p>
+        Create an original product, be sure that the name do not be blank and price do not be greater that 100 pesos. If you do not created a brand before you can't save the product.
+    </p>
+</div>
 <div class="col-md-offset-4 col-md-4">
     <%= form_for :product,url: products_path,method: :post do |f|%>
         <% if @product.errors.any? %>
@@ -22,7 +27,7 @@
         </p>
         <p>
             <%=f.label :price %><br>
-            <%= f.number_field :price , class: 'form-control'%>
+            <%= f.number_field :price , class: 'form-control', step: :any%>
         </p>
         <p>
             <%= f.submit({class: 'btn btn-primary'}) %>

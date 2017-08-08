@@ -1,3 +1,57 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#products-list{
+    height: 400px;
+    overflow: auto;
+    font-family: 'Open Sans';
+    font-size: 16px; 
+    text-align: left;
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    .product-buttons{
+        text-align: right;
+       
+    }
+    .well{
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+#menu-product-buttons{
+    padding-top: 50px;
+    text-align: center;
+    .boton{
+        width: 228px;
+        height: 49px;
+        font-size: 21px;
+    }
+    hr{
+        margin:10px;
+    }
+}
+
+.product-separator{
+    margin: 5px;
+}
+
+//new page
+
+#new-product-form{
+    margin-bottom: 400px;
+    p{
+        color: black;
+        font-size: 25px;
+        input{
+            text-align: center;
+            font-family: 'Roboto';
+            font-size: 20px;
+        }
+    }
+}

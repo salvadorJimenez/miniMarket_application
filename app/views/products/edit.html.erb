@@ -1,6 +1,11 @@
 <div class="col-md-offset-4 col-md-4">
     <h1>Products</h1>
 </div>
+<div class="col-md-offset-2 col-md-8">
+    <p>
+        Ok lets go to edit the product, and this time do it rigth ok?
+    </p>
+</div>
 <div class="col-md-offset-4 col-md-4">
     <%= form_for :product,url: product_path(@product), method: :patch do |f|%>
         <% if @product.errors.any? %>
@@ -22,7 +27,7 @@
         </p>
         <p>
             <%=f.label :price %><br>
-            <%= f.number_field :price , class: 'form-control'%>
+            <%= f.number_field :price , class: 'form-control', step: :any%>
         </p>
         <p>
             <%= f.submit({class: 'btn btn-primary'}) %>

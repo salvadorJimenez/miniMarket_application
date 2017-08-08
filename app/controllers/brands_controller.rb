@@ -1,6 +1,6 @@
 class BrandsController < ApplicationController
   def index
-    @brands = Brand.all
+    @brands = Brand.all.sort_by {|brand| brand.name.capitalize}
   end
 
   def new

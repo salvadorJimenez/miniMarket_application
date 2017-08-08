@@ -10,14 +10,50 @@
         margin: 0;
         padding: 0;
     }
+    .brand-name{
+        font-family: 'Open Sans';
+        font-size: 25px; 
+        text-align: left;
+    }
+    .brand-buttons{
+        text-align: right;
+       
+    }
+    .well{
+        padding: 10px;
+        margin-bottom: 10px;
+    }
 }
 
-#buttons-brand-list{
+#menu-brand-buttons{
     padding-top: 50px;
     text-align: center;
     .boton{
-        width: 280px;
-        height: 50px;
-        font-size: 28px;
+        width: 228px;
+        height: 49px;
+        font-size: 21px;
+    }
+    hr{
+        margin:10px;
     }
 }
+
+.brand-separator{
+    margin: 5px;
+}
+
+//new page
+
+#new-brand-form{
+    margin-bottom: 400px;
+    p{
+        color: black;
+        font-size: 25px;
+        input{
+            text-align: center;
+            font-family: 'Roboto';
+            font-size: 20px;
+        }
+    }
+}
+

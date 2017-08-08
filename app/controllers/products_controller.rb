@@ -1,11 +1,11 @@
 class ProductsController < ApplicationController
   def index
-    @products= Product.all
+    @products= Product.all.sort_by {|product| product.name.capitalize}
   end
 
   def new
     @product=Product.new
-    @brands=Brand.all
+    @brands = Brand.all.sort_by {|brand| brand.name.capitalize}
   end
 
   def create
@@ -14,14 +14,15 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to products_path
     else
-      @brands=Brand.all
+      @brands = Brand.all.sort_by {|brand| brand.name.capitalize}
       render 'new'
     end
   end
 
   def edit
       @product =Product.find(params[:id])
-      @brands=Brand.all
+      @brands = Brand.all.sort_by {|brand| brand.name.capitalize}
+
   end
 
   def update    

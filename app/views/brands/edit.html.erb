@@ -1,7 +1,12 @@
 <div class="col-md-offset-4 col-md-4">
     <h1>Brands</h1>
 </div>
-<div class="col-md-offset-4 col-md-4">
+<div class="col-md-offset-2 col-md-8">
+    <p>
+        Lets change the name of the brand, remember that the name can't be blank.
+    </p>
+</div>
+<div class="col-md-offset-4 col-md-4" id="new-brand-form">
     <%= form_for :brand,url: brand_path(@brand), method: :patch do |f|%>
         <% if @brand.errors.any? %>
             <% @brand.errors.full_messages.each do |msg|%>
