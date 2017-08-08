@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @products= Product.all.sort_by {|product| product.name.capitalize}
+    @total_price=0
   end
 
   def new

@@ -21,8 +21,8 @@
                                 <div class="product-name"><strong>Name: </strong><%= product.name %></div>
                                 <div class="product-brand-name"><strong>Brand: </strong><%= Brand.find(product.brand_id).name %></div>
                                 <div class="product-price"><strong>Price: </strong><%= product.price.to_f %></div>
+                                <% @total_price+=@total_price+product.price.to_f %>
                                 <div class="product-description"><strong>Description: </strong><%= product.description %></div>
-                                
                             </div>  
                             <div class="col-md-3 product-buttons">
                                 <%= link_to "", edit_product_path(product.id), class: 'btn btn-default glyphicon glyphicon-pencil' %>
@@ -45,5 +45,6 @@
         <hr>
         <%= link_to "Go to Brands",brands_path,class: 'btn btn-default boton' %>
         <hr>
+        <div id="total-price"><strong>Total:</strong><span class="glyphicon glyphicon-usd"><%= @total_price %></span></div>
     </div>
 </div>
