@@ -13,24 +13,28 @@
         <hr class="product-separator">
         <div id="products-list">
             <ul>
-                <% @products.each do |product| %>
-                    <li class="well col-md-12">
-                        <div class="col-md-9">
-                            <div class="product-name"><strong>Name: </strong><%= product.name %></div>
-                            <div class="product-brand-name"><strong>Brand: </strong><%= Brand.find(product.brand_id).name %></div>
-                            <div class="product-price"><strong>Price: </strong><%= product.price.to_f %></div>
-                            <div class="product-description"><strong>Description: </strong><%= product.description %></div>
-                            
-                        </div>  
-                        <div class="col-md-3 product-buttons">
-                            <%= link_to "", edit_product_path(product.id), class: 'btn btn-default glyphicon glyphicon-pencil' %>
-                            <%= link_to "", product_path(product.id),
-                                                        method: :delete,
-                                                        data: {confirm: "Are you sure that want to delete this product?"}, 
-                                                        class: 'btn btn-danger glyphicon glyphicon-remove' %>
-                        </div>
-                    </li>
-                <%end%>
+                <% if @products.any? %>
+                    <% @products.each do |product| %>
+                        <li class="well col-md-12">
+                            <div class="col-md-9">
+                                <div class="product-name"><strong>Name: </strong><%= product.name %></div>
+                                <div class="product-brand-name"><strong>Brand: </strong><%= Brand.find(product.brand_id).name %></div>
+                                <div class="product-price"><strong>Price: </strong><%= product.price.to_f %></div>
+                                <div class="product-description"><strong>Description: </strong><%= product.description %></div>
+                                
+                            </div>  
+                            <div class="col-md-3 product-buttons">
+                                <%= link_to "", edit_product_path(product.id), class: 'btn btn-default glyphicon glyphicon-pencil' %>
+                                <%= link_to "", product_path(product.id),
+                                                            method: :delete,
+                                                            data: {confirm: "Are you sure that want to delete this product?"}, 
+                                                            class: 'btn btn-danger glyphicon glyphicon-remove' %>
+                            </div>
+                        </li>
+                    <%end%>
+                <% else %>
+                    <li class="well" id="empty-tag">There are no Products<li>
+                <% end %>
             </ul>
         </div> 
     </div> 

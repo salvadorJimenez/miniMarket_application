@@ -13,17 +13,21 @@
         <hr class="brand-separator">
         <div id="brands-list">
             <ul>
-                <% @brands.each do |brand| %>
-                    <li class="well col-md-12">
-                        <div class="brand-name col-md-8"><%= brand.name %></div>
-                        <div class="brand-buttons col-md-4">
-                            <%= link_to "", edit_brand_path(brand), class: 'btn btn-default glyphicon glyphicon-pencil' %>
-                            <%= link_to "", brand_path(brand),
-                                            method: :delete,
-                                            data: {confirm: "Are you sure that want to delete #{brand.name} brand and all their products?"}, 
-                                            class: 'btn btn-danger glyphicon glyphicon-remove' %>
-                        </div> 
-                    </li>
+                <% if @brands.any? %>
+                    <% @brands.each do |brand| %>
+                        <li class="well col-md-12">
+                            <div class="brand-name col-md-8"><%= brand.name %></div>
+                            <div class="brand-buttons col-md-4">
+                                <%= link_to "", edit_brand_path(brand), class: 'btn btn-default glyphicon glyphicon-pencil' %>
+                                <%= link_to "", brand_path(brand),
+                                                method: :delete,
+                                                data: {confirm: "Are you sure that want to delete #{brand.name} brand and all their products?"}, 
+                                                class: 'btn btn-danger glyphicon glyphicon-remove' %>
+                            </div> 
+                        </li>
+                    <% end %>
+                <% else %>
+                    <li class="well" id="empty-tag">There are no brands<li>
                 <% end %>
             </ul>
         </div> 
